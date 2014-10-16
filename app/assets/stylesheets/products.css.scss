@@ -2,7 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1, h2, h3, h4, p {
- text-align:center;
 
+
+.product-box {
+  margin: 50px auto 10px auto;
+  width: 800px;
+}
+
+.ind-product {
+  border: 2px solid blue;
+  margin: 0px 0px 5px 0px;
+}
+
+#add-pet {
+  padding: 0px 0px 0px 10px;
 }
