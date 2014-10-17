@@ -11,5 +11,68 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome 
  *= require_self
  */
+
+body {
+  background: #A9F7EE;
+}
+
+
+$bgDefault      : #006969;
+$bgHighlight    : #4D9696;
+$colDefault     : #FFFF78;
+$colHighlight   : #FFFFE4;
+.navbar-default {
+	background-color: $bgDefault;
+	border-color: $bgHighlight;
+	.navbar-brand {
+		color: $colDefault;
+		&:hover, &:focus { 
+			color: $colHighlight; }}
+	.navbar-text {
+		color: $colDefault; }
+	.navbar-nav {
+		> li {
+			> a {
+				color: $colDefault;
+				&:hover,  &:focus {
+					color: $colHighlight; }}}
+		> .active {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}
+		> .open {
+			> a, > a:hover, > a:focus {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}}
+	.navbar-toggle {
+		border-color: $bgHighlight;
+		&:hover, &:focus {
+			background-color: $bgHighlight; }
+		.icon-bar {
+			background-color: $colDefault; }}
+	.navbar-collapse,
+	.navbar-form {
+		border-color: $colDefault; }
+	.navbar-link {
+		color: $colDefault;
+		&:hover {
+			color: $colHighlight; }}}
+@media (max-width: 767px) {
+	.navbar-default .navbar-nav .open .dropdown-menu {
+		> li > a {
+			color: $colDefault;
+			&:hover, &:focus {
+				color: $colHighlight; }}
+		> .active {
+			> a, > a:hover, > a:focus, {
+				color: $colHighlight;
+				background-color: $bgHighlight; }}}
+}
+
+* {
+  border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
