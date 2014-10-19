@@ -2,7 +2,13 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @products = Product.where("price < ?", 10) if params[:discount] == "discount_only"
   end
+
+  # def discount
+  #   @discount_products = Product.where(“price < ?”, 10)
+  # end 
+
 
   def new
     @product = Product.new

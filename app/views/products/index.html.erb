@@ -4,9 +4,9 @@
 
     <div class="panel panel-default">
       <!-- Default panel contents -->
-      <div class="panel-heading"><h2>Pet Inventory</h2></div>
+      <div class="panel-heading"><h2>Pet Inventory</h2><a href="/products?discount=discount_only"><button type="button" class="btn btn-info">Show Only Cheap Pets</button></a></div>
       <div class="panel-body">
-        <p>Here are the current list of pets as of <%= Time.now.strftime("%m/%d/%Y.") %> Need to add a pet to the directory? <span id="add-pet"><button type="button" class="btn btn-primary">Add Pet</button></span></p>
+        <p>Current list of pets as of <%= Time.now.strftime("%A, %d %b %Y %l:%M %p.") %> Need to add a pet to the directory? <span id="add-pet"><button type="button" class="btn btn-primary">Add Pet</button></span></p>
       </div>
 
       <!-- Table -->
@@ -16,6 +16,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Picture</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -24,8 +25,9 @@
           <% @products.each do |product| %>
           <tr>
             <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
-            <td><%= product.price %></td>
+            <td><div class="<%= product.status %>"><%= product.dollarizer %></div></td>
             <td><%= product.description %></td>
+            <td><img src="<%= product.photo_check %>" height="35" width="35"></td>
             <td><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
             <td><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></td>
 

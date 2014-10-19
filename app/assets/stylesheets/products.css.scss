@@ -2,11 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+//https://color.adobe.com/Theme-2-color-theme-4609138/
 
 .product-box {
   margin: 50px auto 10px auto;
   width: 800px;
+  border: 4px solid #D2D99C;
+  border-radius: 20px;
+  background: #FFFFFF;
+
 }
 
 .ind-product {
@@ -19,37 +23,14 @@
 }
 
 .navbar {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
-.carousel { z-index: -99; } /* keeps this behind all content */
-.carousel .item {
-    position: fixed; 
-    width: 100%; height: 100%;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -ms-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
- 
+
+.discount {
+  color: red;
 }
-.carousel .one {
-    background: url(image_path("dog_on_grass.jpg"));
-    background-size: cover;
-    -moz-background-size: cover;
-}
-.carousel .two {
-    background: url(image_path("iguana.jpg"));
-    background-size: cover;
-    -moz-background-size: cover;
-}
-.carousel .three {
-    background: url(image_path("sassy_cat.jpg"));
-    background-size: cover;
-    -moz-background-size: cover;
-}
-.carousel .active.left {
-    left:0;
-    opacity:0;
-    z-index:2;
+
+.not-discount {
+  color: green;
 }

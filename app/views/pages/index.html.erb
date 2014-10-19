@@ -1,11 +1,18 @@
-<div id="myCarousel" class="carousel container slide">
-  <div class="carousel-inner">
-            <div class="active item one"></div>
-            <div class="item two"></div>
-            <div class="item three"></div>
-  </div>
-</div>
+       
 
 
 
+
+          <% @products.each do |product| %>
+
+            <p><a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
+            <p><%= product.price %></p>
+            <p><%= product.description %></p>
+            <p><img src="<%= product.photo %>" height="35" width="35"></p>
+            <p><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></p>
+            <p><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></p>
+
+          <% end %>
+
+<i class="fa fa-github"></i>
 
