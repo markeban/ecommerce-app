@@ -15,64 +15,167 @@
  *= require_self
  */
 
+// color theme chosen for this project:
+// https://color.adobe.com/neon-pink-teal-color-theme-2231968/
+
 body {
-  background: #A9F7EE;
+	background: #A9F7EE;
 }
 
 
-$bgDefault      : #006969;
-$bgHighlight    : #4D9696;
-$colDefault     : #FFFF78;
-$colHighlight   : #FFFFE4;
-.navbar-default {
-	background-color: $bgDefault;
-	border-color: $bgHighlight;
-	.navbar-brand {
-		color: $colDefault;
-		&:hover, &:focus { 
-			color: $colHighlight; }}
-	.navbar-text {
-		color: $colDefault; }
-	.navbar-nav {
-		> li {
-			> a {
-				color: $colDefault;
-				&:hover,  &:focus {
-					color: $colHighlight; }}}
-		> .active {
-			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}
-		> .open {
-			> a, > a:hover, > a:focus {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}}
-	.navbar-toggle {
+.top-nav {
+	$navbar-height  : 28px;
+	$bgDefault      : #1A1A1A;
+	$bgHighlight    : #1A1A1A;
+	$colDefault     : #F20587;
+	$colHighlight   : #F769B7;
+	.navbar-default {
+		background-color: $bgDefault;
 		border-color: $bgHighlight;
-		&:hover, &:focus {
-			background-color: $bgHighlight; }
-		.icon-bar {
-			background-color: $colDefault; }}
-	.navbar-collapse,
-	.navbar-form {
-		border-color: $colDefault; }
-	.navbar-link {
-		color: $colDefault;
-		&:hover {
-			color: $colHighlight; }}}
-@media (max-width: 767px) {
-	.navbar-default .navbar-nav .open .dropdown-menu {
-		> li > a {
+		.navbar-brand {
 			color: $colDefault;
-			&:hover, &:focus {
+			&:hover, &:focus { 
 				color: $colHighlight; }}
-		> .active {
-			> a, > a:hover, > a:focus, {
-				color: $colHighlight;
-				background-color: $bgHighlight; }}}
+				.navbar-text {
+					color: $colDefault; }
+					.navbar-nav {
+						> li {
+							> a {
+								color: $colDefault;
+								&:hover,  &:focus {
+									color: $colHighlight; }}}
+									> .active {
+										> a, > a:hover, > a:focus {
+											color: $colHighlight;
+											background-color: $bgHighlight; }}
+											> .open {
+												> a, > a:hover, > a:focus {
+													color: $colHighlight;
+													background-color: $bgHighlight; }}}
+													.navbar-toggle {
+														border-color: $bgHighlight;
+														&:hover, &:focus {
+															background-color: $bgHighlight; }
+															.icon-bar {
+																background-color: $colDefault; }}
+																.navbar-collapse,
+																.navbar-form {
+																	border-color: $colDefault; }
+																	.navbar-link {
+																		color: $colDefault;
+																		&:hover {
+																			color: $colHighlight; }}}
+																			@media (max-width: 767px) {
+																				.navbar-default .navbar-nav .open .dropdown-menu {
+																					> li > a {
+																						color: $colDefault;
+																						&:hover, &:focus {
+																							color: $colHighlight; }}
+																							> .active {
+																								> a, > a:hover, > a:focus, {
+																									color: $colHighlight;
+																									background-color: $bgHighlight; }}}
+																								}
+
+																								.navbar {
+																									border-radius: 0 !important;
+																									-moz-border-radius: 0 !important;
+																								}
+
+																					
+
 }
 
-.navbar {
-  border-radius: 0 !important;
-  -moz-border-radius: 0 !important;
+.title {
+	font-family: 'Bangers', cursive;
+	font-size: 50px;
+	color: #F20587;
+	text-align: center;
+	width:400px;
+	z-index: 3;
 }
+
+
+.header-bar {
+	width:100%;
+	background: #64CFAE;
+}
+
+
+
+
+
+.bottom-nav {
+	$bgDefault      : #006969;
+	$bgHighlight    : #4D9696;
+	$colDefault     : #FFFF78;
+	$colHighlight   : #FFFFE4;
+	.navbar-default {
+		background-color: $bgDefault;
+		border-color: $bgHighlight;
+		.navbar-brand {
+			color: $colDefault;
+			&:hover, &:focus { 
+				color: $colHighlight; }}
+				.navbar-text {
+					color: $colDefault; }
+					.navbar-nav {
+						> li {
+							> a {
+								color: $colDefault;
+								&:hover,  &:focus {
+									color: $colHighlight; }}}
+									> .active {
+										> a, > a:hover, > a:focus {
+											color: $colHighlight;
+											background-color: $bgHighlight; }}
+											> .open {
+												> a, > a:hover, > a:focus {
+													color: $colHighlight;
+													background-color: $bgHighlight; }}}
+													.navbar-toggle {
+														border-color: $bgHighlight;
+														&:hover, &:focus {
+															background-color: $bgHighlight; }
+															.icon-bar {
+																background-color: $colDefault; }}
+																.navbar-collapse,
+																.navbar-form {
+																	border-color: $colDefault; }
+																	.navbar-link {
+																		color: $colDefault;
+																		&:hover {
+																			color: $colHighlight; }}}
+																			@media (max-width: 767px) {
+																				.navbar-default .navbar-nav .open .dropdown-menu {
+																					> li > a {
+																						color: $colDefault;
+																						&:hover, &:focus {
+																							color: $colHighlight; }}
+																							> .active {
+																								> a, > a:hover, > a:focus, {
+																									color: $colHighlight;
+																									background-color: $bgHighlight; }}}
+																								}
+
+																								.navbar {
+																									border-radius: 0 !important;
+																									-moz-border-radius: 0 !important;
+																								}
+
+																								.title {
+																									font-family: 'Bangers', cursive;
+																									font-size: 50px;
+																									color: #F20587;
+																									text-align: center;
+																									width:400px;
+																									z-index: 3;
+																								}
+
+
+																								.header-bar {
+																									width:100%;
+																									background: #64CFAE;
+																								}
+}
+

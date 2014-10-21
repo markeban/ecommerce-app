@@ -1,18 +1,29 @@
-       
 
 
 
 
-          <% @products.each do |product| %>
 
-            <p><a href="/products/<%= product.id%>"> <%= product.name %> </a></p>
-            <p><%= product.price %></p>
-            <p><%= product.description %></p>
-            <p><img src="<%= product.photo %>" height="35" width="35"></p>
-            <p><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></p>
-            <p><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></p>
 
-          <% end %>
+<div class="row">
+  <% @products.each do |product| %>
+  <div class="col-md-3">
+      <div class="ind-product" style="background-image: url('<%= product.photo_check %>');background-size:100% auto;opacity: 0.9">
+        <div class="ind-product-data">
+          <p><%= product.name %></p>
+          <p><%= product.price %></p>
+          <p><%= product.description %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
 
 <i class="fa fa-github"></i>
 

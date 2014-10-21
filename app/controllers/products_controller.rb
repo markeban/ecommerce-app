@@ -16,7 +16,8 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(params[:product])
-    redirect_to '/products'
+    flash[:success] = "Product successfully added"
+    redirect_to "/show/#{1}"
   end
 
 
@@ -31,13 +32,15 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find_by(:id => params[:id])
     @product.update(params[:product])
-    redirect_to '/products'
+    flash[:success] = "Product successfully updated"
+    redirect_to '/products/#{@product.id}'
 
   end
 
   def destroy
     @product = Product.find_by(:id => params[:id])
     @product.destroy
+    flash[:danger] = "Product deleted"
     redirect_to '/products'
   end
 end

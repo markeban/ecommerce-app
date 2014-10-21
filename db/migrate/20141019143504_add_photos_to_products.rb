@@ -3,5 +3,6 @@ class AddPhotosToProducts < ActiveRecord::Migration
     change_table :products do |t|
       t.string :photo
     end
+  #add_column :products, :photo, :string  
   end
 end
