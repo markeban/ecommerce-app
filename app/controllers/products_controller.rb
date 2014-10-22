@@ -15,9 +15,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(params[:product])
+    recipe = Product.create(params[:product])
     flash[:success] = "Product successfully added"
-    redirect_to "/show/#{1}"
+    redirect_to "/show/#{recipe.id}"
   end
 
 
@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by(:id => params[:id])
     @product.update(params[:product])
     flash[:success] = "Product successfully updated"
-    redirect_to '/products/#{@product.id}'
+    redirect_to "/products/#{params[:id]}"
 
   end
 

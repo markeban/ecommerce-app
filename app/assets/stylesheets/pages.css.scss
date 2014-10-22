@@ -62,22 +62,19 @@ $colHighlight   : #ecdbff;
 				background-color: $bgHighlight; }}}
 }
 
-.ind-product {
-  border: 2px solid blue;
-  background: #FFFFFF;
-  border-radius:20px;
-  padding: 5px;
-  min-height: 200px;
-
+.thumb {
+  border: 1px solid #222222;
+  text-align: center;
+  border-radius: 25px;
+  margin: 20px 0px 20px 0px;
+  background:#FFFFFF;
+  min-height: 350px;
 }
 
-.ind-product-data {
-	opacity: 0.9;
-	background: #FFFFFF;
-
+.product-row {
+	margin-bottom: 20px;
 }
 
-.index-wrap {
-	padding: 5px;
-	
+.no-wrap {
+	white-space: nowrap;
 }

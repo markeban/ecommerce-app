@@ -3,9 +3,22 @@
 
 <div class="product-box">
   <div class="row">
-    <div class="col-md-8"><img src="<%= @product.photo_check %>" class="img-responsive"></div>
-    <div class="col-md-4"><p> <%= product.name %> </p>
-            <p><div class="<%= product.status %>"><%= product.dollarizer %></div></p>
-            <p><%= product.description %></p>/div>
+    <div class="col-md-8">
+                  
+                        <% @product.photos.each do |photo| %>
+                          <img src="<%= photo %>" class="img-responsive">
+                        <% end %>
+                   
+
+    <div class="col-md-4">
+      <h2> <%= @product.name %> </h2>
+      <p><div class="<%= @product.status %>"><%= @product.dollarizer %></div></p>
+      <p><%= @product.description %></p></div>
+      <h3>Vender Information:</h3>
+      <p><%= @product.vendor.name %></p>
+      <p><%= @product.vendor.email %></p>
+      <p><%= @product.vendor.address %></p>
+      <p><%= @product.vendor.phone %></p>
+    </div>      
   </div>
 </div>

@@ -3,27 +3,38 @@
 
 
 
-
+<!--
 <div class="row">
   <% @products.each do |product| %>
   <div class="col-md-3">
-      <div class="ind-product" style="background-image: url('<%= product.photo_check %>');background-size:100% auto;opacity: 0.9">
         <div class="ind-product-data">
           <p><%= product.name %></p>
           <p><%= product.price %></p>
           <p><%= product.description %></p>
         </div>
-      </div>
     </div>
   <% end %>
 </div>
+-->
+
+
+<% @products.each_slice(4) do |product_group| %>
+  <div class="row product-row">
+    <% product_group.each do |product| %>
+      <div class="col-md-3">
+        <div class="thumb">
+          <a href="/products/<%= product.id %>">
+            <p><%= product.name %></p>
+            <img src="<%= product.photo_check %>" class="img-responsive"/>
+            <p><%= product.dollarizer %></p>
+            <p><%= product.description %></p>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 
 
-
-
-
-
-
-<i class="fa fa-github"></i>
 

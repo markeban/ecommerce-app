@@ -1,4 +1,9 @@
 class Product < ActiveRecord::Base
+  belongs_to :vendor
+  has_many :photos
+
+
+
   def dollarizer
     return "$ #{price.round(2)}"
   end
@@ -13,7 +18,7 @@ class Product < ActiveRecord::Base
 
   def photo_check
     if photo.nil?
-      return "http://www.designofsignage.com/application/symbol/building/image/600x600/no-photo.jpg"
+      return "http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png"
     else
       return photo
     end
