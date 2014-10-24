@@ -1,6 +1,21 @@
 Rails.application.routes.draw do
 
 
+  get 'orders/new'
+
+  post 'orders' => 'orders#create'
+
+  get 'orders/update'
+
+  get 'orders/edit'
+
+  get 'orders/destroy'
+
+  get 'orders/index'
+
+  get 'orders/show'
+
+  devise_for :users
   root 'pages#index'
   get '/products' => 'products#index'
   get '/products/new' => 'products#new'

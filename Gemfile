@@ -43,5 +43,6 @@ gem 'quiet_assets', group: :development
 gem 'bootstrap_form' #use bootstrap forms with rails
 gem 'font-awesome-sass', '~> 4.2.0'
 gem 'seed_dump'
+gem 'devise'
 
 

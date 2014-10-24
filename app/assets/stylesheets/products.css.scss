@@ -6,6 +6,7 @@
 
 .product-box {
   margin: 50px auto 10px auto;
+  padding: 10px;
   width: 800px;
   border: 4px solid #D2D99C;
   border-radius: 20px;
@@ -13,6 +14,10 @@
 
 }
 
+
+.product-box img {
+  max-height: 500px;
+}
 .ind-product {
   border: 2px solid blue;
   margin: 0px 0px 5px 0px;
@@ -34,3 +39,4 @@
 .not-discount {
   color: green;
 }
+

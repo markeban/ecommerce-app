@@ -27,7 +27,11 @@
             <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
             <td><div class="<%= product.status %>"><div class="no-wrap"><%= product.dollarizer %></div></div></td>
             <td><%= product.description %></td>
-            <td><img src="<%= product.photo_check %>" height="35" width="35"></td>
+              <%if product.photos.first != nil %>
+                <td><img src="<%= product.photos.first.name %>" height="35" width="35"></td>
+              <%else%>
+                <td><img src="http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png" height="35" width="35"></td>
+              <%end%>
             <td><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
             <td><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></td>
 

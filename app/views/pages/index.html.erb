@@ -3,19 +3,6 @@
 
 
 
-<!--
-<div class="row">
-  <% @products.each do |product| %>
-  <div class="col-md-3">
-        <div class="ind-product-data">
-          <p><%= product.name %></p>
-          <p><%= product.price %></p>
-          <p><%= product.description %></p>
-        </div>
-    </div>
-  <% end %>
-</div>
--->
 
 
 <% @products.each_slice(4) do |product_group| %>
@@ -25,9 +12,15 @@
         <div class="thumb">
           <a href="/products/<%= product.id %>">
             <p><%= product.name %></p>
-            <img src="<%= product.photo_check %>" class="img-responsive"/>
+              <%if product.photos.first != nil %>
+                <td><img src="<%= product.photos.first.name %>" class="img-responsive"></td>
+              <%else%>
+                <td><img src="http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png" class="img-responsive"></td>
+              <%end%>
             <p><%= product.dollarizer %></p>
             <p><%= product.description %></p>
+
+
           </a>
         </div>
       </div>
