@@ -49,7 +49,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: ecommerce-app_production
-  username: ecommerce-app
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  database: ecommerce-app-production
+  adapter: postgresql
+  encoding: unicode
+  pool: 5

@@ -1,5 +1,5 @@
 Product.create!([
-  {name: "chiwawa", description: "incredibly tiny loud dog", price: "4.1678", photo: "https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg"},
-  {name: "Husky", description: "Loves snow. Hates summer.", price: "3242.99", photo: nil},
-  {name: "Retriever", description: "horrible dog", price: "23.86", photo: nil}
+  {name: "candy canes", description: "candy canes in bulk", price: "4.16"},
+  {name: "Peanut Butter Chocolates", description: "Chocoate covered peanut butter bites 12 pack", price: "14.99"},
+  {name: "Candy Covered Apples", description: "Caramel covered apples, gluten free", price: "2.99"}
 ])
