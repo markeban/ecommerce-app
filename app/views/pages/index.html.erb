@@ -17,7 +17,7 @@
               <%else%>
                 <td><img src="http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png" class="img-responsive"></td>
               <%end%>
-            <p><%= product.dollarizer %></p>
+            <p><%= number_to_currency(product.price) %></p>
             <p><%= product.description %></p>
 
 

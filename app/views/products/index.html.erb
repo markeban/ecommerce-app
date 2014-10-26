@@ -25,7 +25,7 @@
           <% @products.each do |product| %>
           <tr>
             <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
-            <td><div class="<%= product.status %>"><div class="no-wrap"><%= product.dollarizer %></div></div></td>
+            <td><div class="<%= product.status %>"><div class="no-wrap"><%= number_to_currency(product.price) %></div></div></td>
             <td><%= product.description %></td>
               <%if product.photos.first != nil %>
                 <td><img src="<%= product.photos.first.name %>" height="35" width="35"></td>

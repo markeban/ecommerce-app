@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-4">
               <h2> <%= @product.name %> </h2>
-              <p><div class="<%= @product.status %>"><%= @product.dollarizer %></div></p>
+              <p><div class="<%= @product.status %>"><%= number_to_currency(@product.price) %></div></p>
               <p><%= @product.description %></p>
               <h3>Vender Information:</h3>
               <p><%= @product.vendor.name %></p>
