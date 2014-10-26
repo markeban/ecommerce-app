@@ -1,8 +1,4 @@
-User.create!([
-  {email: "mark@markeban.com", encrypted_password: "$2a$10$1Me22Q6PzT8pqkQyxzh71ekonwoh1ImwgkKylkR9jZnJACSiKJJi2", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2014-10-23 00:41:24", last_sign_in_at: "2014-10-23 00:41:24", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
-  {email: "markeban@yahoo.com", encrypted_password: "$2a$10$j18Ar1kY6q6faUIeGxq.huc7QdNTxZ/hKS/p7doHkVI.EoZdXqrDW", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2014-10-23 01:01:46", last_sign_in_at: "2014-10-23 01:00:32", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"},
-  {email: "test@test.com", encrypted_password: "$2a$10$yHi.ArnNACDO1Q86JlUZSeV4CIfdJ0EP0mcoqW7662BxscCXDi6Xy", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: "2014-10-24 02:13:00", sign_in_count: 2, current_sign_in_at: "2014-10-24 02:13:01", last_sign_in_at: "2014-10-24 02:12:27", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1"}
-])
+
 Order.create!([
   {user_id: 2, product_id: 1, quantity: 14, total: "74.0"},
   {user_id: 2, product_id: 1, quantity: 14, total: "74.0"},
