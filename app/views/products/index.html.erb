@@ -1,45 +1,63 @@
 <div class="product-box">
 
-  
 
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading"><h2>Inventory</h2><a href="/products?discount=discount_only"><button type="button" class="btn btn-info">Show Only Cheap Candy/Sweets</button></a></div>
-      <div class="panel-body">
-        <p>Current list of pets as of <%= Time.now.strftime("%A, %d %b %Y %l:%M %p.") %> Need to add inventory to the directory? <span id="add-pet"><button type="button" class="btn btn-primary">Add</button></span></p>
-      </div>
 
-      <!-- Table -->
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Picture</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @products.each do |product| %>
-          <tr>
-            <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
-            <td><div class="<%= product.status %>"><div class="no-wrap"><%= number_to_currency(product.price) %></div></div></td>
-            <td><%= product.description %></td>
-              <%if product.photos.first != nil %>
-                <td><img src="<%= product.photos.first.name %>" height="35" width="35"></td>
-              <%else%>
-                <td><img src="http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png" height="35" width="35"></td>
-              <%end%>
-            <td><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
-            <td><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></td>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><h2>Inventory</h2><a href="/products?discount=discount_only"><button type="button" class="btn btn-info">Show Only Cheap Candy/Sweets</button></a>
 
-          </tr>
+      <div class="btn-group">
+        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+          Categories <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+          <% @categories.each do |category| %>
+          <li><a href="/products?category=<%= category.name %>"><%= category.name %></a></li>
           <% end %>
-        </tbody>
-      </table>
+          <li class="divider"></li>
+          <li><a href="/products?category=show_all"> Show All</a>
+        </ul>
+      </div>
     </div>
+
+
+
+
+    <div class="panel-body">
+      <p>Current list of pets as of <%= Time.now.strftime("%A, %d %b %Y %l:%M %p.") %> Need to add inventory to the directory? <span id="add-pet"><button type="button" class="btn btn-primary">Add</button></span></p>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Picture</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
+          <td><div class="<%= product.status %>"><div class="no-wrap"><%= number_to_currency(product.price) %></div></div></td>
+          <td><%= product.description %></td>
+          <%if product.photos.first != nil %>
+          <td><img src="<%= product.photos.first.name %>" height="35" width="35"></td>
+          <%else%>
+          <td><img src="http://www.clker.com/cliparts/o/u/D/d/p/w/no-photo-md.png" height="35" width="35"></td>
+          <%end%>
+          <td><a href="/products/<%= product.id%>/edit"><button type="button" class="btn btn-warning">Edit</button></a></td>
+          <td><a data-confirm="Are you sure?" data-method="delete" href="/products/<%= product.id %>" rel="nofollow"><button type="button" class="btn btn-danger">Delete</button></a></td>
+
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
 
 </div>

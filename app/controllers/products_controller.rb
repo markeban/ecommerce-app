@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all
     @products = Product.where("price < ?", 10) if params[:discount] == "discount_only"
+    @products = Product.joins(:categories).where("categories.name = ?", params[:category]) if params[:category]
+    @categories = Category.all
+    @products = Product.all if params[:category] == "show_all"
+
   end
 
   # def discount
@@ -24,6 +28,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find_by(:id => params[:id])
     @order = Order.new
+    @carted_product = CartedProduct.new
   end
 
   def edit
