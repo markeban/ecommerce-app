@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
 
 
-  get 'orders/new'
+  get 'carted_products/new'
 
-  post 'orders' => 'orders#create'
+  post 'carted_products/' => 'carted_products#create'
 
-  get 'orders/update'
+  get 'carted_products/update'
 
-  get 'orders/edit'
+  get 'carted_products/edit'
 
-  get 'orders/destroy'
+  get 'carted_products/destroy'
 
-  get 'orders/index'
+  get 'carted_products/index'
 
-  get 'orders/show'
+  get 'carted_products/show'
+
+
 
   devise_for :users
   root 'pages#index'
