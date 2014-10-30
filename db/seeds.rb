@@ -1,18 +1,4 @@
 
-Order.create!([
-  {user_id: 2, product_id: 1, quantity: 14, total: "74.0"},
-  {user_id: 2, product_id: 1, quantity: 14, total: "74.0"},
-  {user_id: 2, product_id: 1, quantity: 14, total: "74.0"},
-  {user_id: 2, product_id: 1, quantity: 3, total: "15.96"},
-  {user_id: 2, product_id: 1, quantity: 11, total: "58.52"},
-  {user_id: 2, product_id: 1, quantity: 4, total: "21.28"},
-  {user_id: 2, product_id: 1, quantity: 4, total: "21.28"},
-  {user_id: 2, product_id: 1, quantity: 4, total: "21.28"},
-  {user_id: 2, product_id: 1, quantity: 4, total: "21.28"},
-  {user_id: 2, product_id: 1, quantity: 7, total: "37.24"},
-  {user_id: 2, product_id: 1, quantity: 14, total: "74.48"},
-  {user_id: 2, product_id: 1, quantity: 14, total: "74.48"}
-])
 Photo.create!([
   {name: "http://www.lovethispic.com/uploaded_images/49051-Bundle-Of-Candy-Canes.jpg", product_id: 1},
   {name: "http://blogs.babycenter.com/wp-content/uploads/2011/11/candy-canes-400x400-300x200.jpg", product_id: 1},
@@ -26,8 +12,8 @@ Product.create!([
   {name: "Hershey Kisses", description: "100 pieces per box. assorted colors. 3.4 kg.", price: "12.0", vendor_id: 4},
   {name: "Vermont Rock Candy", description: "Pack of 5 (blue, orange, green, purple, and red). 800 grams total.", price: "1.0", vendor_id: 2},
   {name: "Chocolate Covered Strawberries", description: "\r\nwhere's the description", price: "32.53", vendor_id: 2},
-  {name: "Chocolate Covered Cherries", description: "bold flavor", price: "50.32", vendor_id: nil},
-  {name: "Laffy Taffy", description: "Chewy goodness", price: "23.92", vendor_id: nil}
+  {name: "Chocolate Covered Cherries", description: "bold flavor", price: "50.32", vendor_id: 2},
+  {name: "Laffy Taffy", description: "Chewy goodness", price: "23.92", vendor_id: 1}
 ])
 Vendor.create!([
   {name: "Dan's Chocolate Warehouse", email: "dan@aol.com", address: "5435 N. Cityfront\nHinsdale, CA 64343", phone: "343-242-2422"},

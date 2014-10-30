@@ -3,19 +3,21 @@ class CartedProductsController < ApplicationController
   end
 
   def create
-    if current_user.orders.where(:status => "cart").empty?
-      @order = current_user.orders.create(:status => "cart")
-    else
-      @order = current_user.orders.find_by(nil)
+    if user_signed_in?
+       if Order.find_by(:user_id => current_user.id, :status => "cart")
+          @order = Order.find_by(:user_id => current_user.id, :status => "cart")
+       else
+          @order = Order.create(:status => "cart", :user_id => current_user.id)
+       end
+      CartedProduct.create(params[:carted_product].merge({:order_id => @order.id}))
+      flash[:success] = "Added to cart."
+      redirect_to "/"
+    else  
+      flash[:warning] = "You must be logged in or create an account to add items to your shopping cart."
+      redirect_to "/"
     end
-    @order.carted_products.create(params[:carted_product])
 
 
-
-    #product_id = params[:order][:product_id]
-    #price = Product.find(product_id).price
-    #@total = price * @order.quantity
-    #@order.update(:total => @total)
   end
 
   def update

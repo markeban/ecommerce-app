@@ -23,68 +23,6 @@ body {
 }
 
 
-.top-nav {
-	$navbar-height  : 28px;
-	$bgDefault      : #1A1A1A;
-	$bgHighlight    : #1A1A1A;
-	$colDefault     : #F20587;
-	$colHighlight   : #F769B7;
-	.navbar-default {
-		background-color: $bgDefault;
-		border-color: $bgHighlight;
-		.navbar-brand {
-			color: $colDefault;
-			&:hover, &:focus { 
-				color: $colHighlight; }}
-				.navbar-text {
-					color: $colDefault; }
-					.navbar-nav {
-						> li {
-							> a {
-								color: $colDefault;
-								&:hover,  &:focus {
-									color: $colHighlight; }}}
-									> .active {
-										> a, > a:hover, > a:focus {
-											color: $colHighlight;
-											background-color: $bgHighlight; }}
-											> .open {
-												> a, > a:hover, > a:focus {
-													color: $colHighlight;
-													background-color: $bgHighlight; }}}
-													.navbar-toggle {
-														border-color: $bgHighlight;
-														&:hover, &:focus {
-															background-color: $bgHighlight; }
-															.icon-bar {
-																background-color: $colDefault; }}
-																.navbar-collapse,
-																.navbar-form {
-																	border-color: $colDefault; }
-																	.navbar-link {
-																		color: $colDefault;
-																		&:hover {
-																			color: $colHighlight; }}}
-																			@media (max-width: 767px) {
-																				.navbar-default .navbar-nav .open .dropdown-menu {
-																					> li > a {
-																						color: $colDefault;
-																						&:hover, &:focus {
-																							color: $colHighlight; }}
-																							> .active {
-																								> a, > a:hover, > a:focus, {
-																									color: $colHighlight;
-																									background-color: $bgHighlight; }}}
-																								}
-
-																								.navbar {
-																									border-radius: 0 !important;
-																									-moz-border-radius: 0 !important;
-																								}
-
-																					
-
-}
 
 .title {
 	font-family: 'Bangers', cursive;
@@ -179,3 +117,15 @@ body {
 																								}
 }
 
+.signlog li {
+  display: inline;
+}
+
+.shopping-cart {
+  float: right;
+}
+
+.topbar {
+  width: 100%;
+  background:#FFFFFF;
+}
