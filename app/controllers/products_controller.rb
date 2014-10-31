@@ -19,9 +19,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    recipe = Product.create(params[:product])
-    flash[:success] = "Product successfully added"
-    redirect_to "/show/#{recipe.id}"
+    @product = Product.new(params[:product])
+    if @product.save
+      flash[:success] = "Product successfully added"
+      redirect_to product_path(@product.id)
+    else
+      render 'new'
+    end
   end
 
 
@@ -38,7 +42,7 @@ class ProductsController < ApplicationController
     @product = Product.find_by(:id => params[:id])
     @product.update(params[:product])
     flash[:success] = "Product successfully updated"
-    redirect_to "/products/#{params[:id]}"
+    redirect_to product_path(@product.id)
 
   end
 
@@ -46,6 +50,6 @@ class ProductsController < ApplicationController
     @product = Product.find_by(:id => params[:id])
     @product.destroy
     flash[:danger] = "Product deleted"
-    redirect_to '/products'
+    redirect_to products_path
   end
 end

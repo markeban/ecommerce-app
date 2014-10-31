@@ -1,4 +1,6 @@
 class CartedProductsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
   end
 
@@ -30,6 +32,8 @@ class CartedProductsController < ApplicationController
   end
 
   def index
+    @order = Order.find_by(:user_id => current_user.id, :status => "cart")
+    @carted_products = @order.carted_products
   end
 
   def show

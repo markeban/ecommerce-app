@@ -15,10 +15,7 @@
       <p><div class="<%= @product.status %>"><%= number_to_currency(@product.price) %></div></p>
       <p><%= @product.description %></p>
       <h3>Vender Information:</h3>
-      <p><%= @product.vendor.name %></p>
-      <p><%= @product.vendor.email %></p>
-      <p><%= @product.vendor.address %></p>
-      <p><%= @product.vendor.phone %></p>
+
     <% if user_signed_in? %>
       <%= bootstrap_form_for @carted_product do |f| %>
       <div>

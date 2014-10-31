@@ -6,7 +6,8 @@ class Product < ActiveRecord::Base
   has_many :orders, :through => :carted_products
   belongs_to :vendor
 
-
+  validates :name, :presence => true
+  validates :price, :numericality => true
 
   def dollarizer
     return "$ #{price.round(2)}"

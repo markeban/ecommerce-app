@@ -24,7 +24,7 @@
 
 
     <div class="panel-body">
-      <p>Current list of pets as of <%= Time.now.strftime("%A, %d %b %Y %l:%M %p.") %> Need to add inventory to the directory? <span id="add-pet"><button type="button" class="btn btn-primary">Add</button></span></p>
+      <p>Current list of pets as of <%= Time.now.strftime("%A, %d %b %Y %l:%M %p.") %> Need to add inventory to the directory? <a href="<%=new_product_path %>"><span id="add-pet"><button type="button" class="btn btn-primary">Add</button></span></a></p>
     </div>
 
     <!-- Table -->
@@ -42,7 +42,7 @@
       <tbody>
         <% @products.each do |product| %>
         <tr>
-          <td><a href="/products/<%= product.id%>"> <%= product.name %> </a></td>
+          <td><a href="<%= product_path(product.id) %>"><%= product.name %></a></td>
           <td><div class="<%= product.status %>"><div class="no-wrap"><%= number_to_currency(product.price) %></div></div></td>
           <td><%= product.description %></td>
           <%if product.photos.first != nil %>

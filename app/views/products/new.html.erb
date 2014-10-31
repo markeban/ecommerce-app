@@ -1,28 +1,5 @@
 <div class="product-box">
-  <h2> Add new inventory: </h2>
 
-  <%= bootstrap_form_for @product do |f| %>
+<%= render "form" %>
 
-  <div>
-    <%= f.text_field :name %>
-  </div>
-
-  <div>
-    <%= f.text_field :price %>
-  </div>
-
-  <div>
-    <%= f.text_area :description %>
-  </div>
-  
-  <div>
-    <%= f.text_area :photo %>
-  </div>
-
-  <div>
-    <%= f.submit 'Save' %>
-  </div>
-
-  <% end %>
-</div>
 

@@ -1,34 +1,23 @@
 Rails.application.routes.draw do
 
+  root 'pages#index'
+  
   get 'carted_products' => 'carted_products#index'
   post 'carted_products' => 'carted_products#create'
-
   post 'carted_products/' => 'carted_products#create'
-
   post 'orders' => 'orders#create'
   get 'orders' => 'orders#new'
   patch 'orders/:id' => 'orders#update', :as => :order
-
-
-
-
 
   devise_for :users
-  root 'pages#index'
-  get '/products' => 'products#index'
-  get '/products/new' => 'products#new'
+
+  get '/products/new' => 'products#new', :as => :new_product
+  get '/products' => 'products#index', :as => :products
   post '/products' => 'products#create'
   get '/products/:id' => 'products#show', :as => :product
-  get '/products/:id/edit' => 'products#edit'
+  get '/products/:id/edit' => 'products#edit', :as => :edit_product
   patch '/products/:id' => 'products#update'
   delete '/products/:id' => 'products#destroy'
-
-
-  post 'orders' => 'orders#create'
-  get 'orders' => 'orders#new'
-  patch 'orders/:id' => 'orders#update', :as => :order
-  get 'carted_products' => 'carted_products#index'
-  post 'carted_products' => 'carted_products#create'
   
   
   # The priority is based upon order of creation: first created -> highest priority.
